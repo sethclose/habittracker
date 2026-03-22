@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* **** HEADER **** */
+.header, .main {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1rem; /* indents title, text area (all sides) */
+}
+.header {
+    display: flex;
+    flex-direction: row; /* row is default */
+    background: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1.5em 1em 0.5em 0.0em;
+}
+.header__link {
+    text-decoration: none;
+    color: inherit; /* from .header */
+    transition: color 0.25s ease-in-out;
+}
+.header__link:hover {
+    color: orange;
+}
+.header__logo {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* **** FORM **** */
+.form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem; /* needs to be inherited */
+}
+.form__input {
+    padding: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+    border: 3px solid black;
+    border-radius: 6px;
+    background-color: #fafafa; /* whitish */
+    margin-bottom: 1rem;
+}
+.form__button {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: orange;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    align-self: flex-end; /* default is stretch, flex-start to left */
+}
+
+/* **** DATES **** */
+.dates {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+.dates__link {
+    color: inherit; /* black */
+    text-decoration: none; /* no underline for link */
+    outline: none; /* removes outline around when highlighted */
+
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dates__link--current {
+    background: orange;
+}
+.dates__link:not(.dates__link--current):hover {
+    background: yellow;
+}
+.dates__link:first-of-type,         /* first */
+.dates__link:nth-of-type(2),        /* second */
+.dates__link:nth-last-of-type(2),   /* second to last */
+.dates__link:last-of-type {         /* last */
+    display: none;
+}
+@media screen and (min-width: 25rem) {
+    .dates__link:nth-of-type(2),        /* second */
+    .dates__link:nth-last-of-type(2) {  /* second to last */
+        display: block;                 /* instead of none */
+    }
+}
+@media screen and (min-width: 35rem) {
+    .dates__link:first-of-type,        /* second */
+    .dates__link:last-of-type {  /* second to last */
+        display: block;                 /* instead of none */
+    }
+}
+
+/* **** DATES **** */
+.habit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff2d8;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+.habit:not(.completed) {
+    padding: 0;
+}
+.habit:not(.completed):hover {
+    background-color: orange;
+}
+.habit__name {
+    margin: 0;
+}
+.habit__icon {
+    width: 1em;
+    height: 1em;
+}
+.habit__form {
+    width: 100%;
+}
+.habit__button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
+
+
